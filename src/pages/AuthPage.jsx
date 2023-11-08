@@ -1,7 +1,12 @@
 import React from "react";
+import FormComponent from "../components/Form/Form";
 
 const AuthPage = () => {
-  return <div>AuthPage</div>;
+  return (
+    <div>
+      <FormComponent />
+    </div>
+  );
 };
 
 export default AuthPage;

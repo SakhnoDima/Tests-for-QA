@@ -6,7 +6,7 @@ import Container from "../Container";
 const Layout = () => {
   return (
     <>
-      <header className=" bg-bg-container border-b">
+      <header className="bg-bg-container border-b">
         <AppBar />
       </header>
       <main className=" bg-bg-container">

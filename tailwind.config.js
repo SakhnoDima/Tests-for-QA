@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "bg-container": "#F5F6FB;",
+        "active-color": "#FF6B09",
       },
     },
     screens: {
