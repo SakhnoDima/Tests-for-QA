@@ -3,7 +3,7 @@ import FormComponent from "../components/Form/Form";
 
 const AuthPage = () => {
   return (
-    <div>
+    <div className=" pb-[34px]">
       <FormComponent />
     </div>
   );

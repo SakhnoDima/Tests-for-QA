@@ -2,6 +2,8 @@ import React from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { operationsAuth } from "../../redux/authSlice";
+import FormBtn from "../FormBtn/FormBtn";
+import { BtnForm } from "../ButtonForm/BtnForm";
 
 const validate = (values) => {
   const errors = {};
@@ -42,35 +44,60 @@ const FormComponent = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="email">Email Address</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)]">
+      <h2 className="text-sm font-medium text-center mb-[32px]">
+        You can use your Google Account to authorize:
+      </h2>
+      <FormBtn onClick={() => console.log(1)} />
+      <h2 className="mb-[30px] mt-[32px] tracking-[0.2px] text-sm font-medium">
+        Or login to our app using e-mail and <br /> password:
+      </h2>
 
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-        />
-        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
-        <button type="submit" onClick={handleSubmitRegister}>
-          Register
-        </button>
-        <button type="submit" onClick={handleSubmitLogIn}>
-          LogIn
-        </button>
+      <form onSubmit={formik.handleSubmit}>
+        <div className="mb-[20px]">
+          <input
+            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace]"
+            placeholder="E-mail"
+            id="email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.errors.email ? (
+            <p className="text-sm font-medium text-[#FF0000]">
+              {formik.errors.email}
+            </p>
+          ) : null}
+        </div>
+        <div className="mb-[20px]">
+          <input
+            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace]"
+            placeholder="Password"
+            id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+          />
+          {formik.errors.password ? (
+            <p className="text-sm font-medium text-[#FF0000]">
+              {formik.errors.password}
+            </p>
+          ) : null}
+        </div>
+        <BtnForm $style={"register"} onClick={handleSubmitRegister}>
+          <p className="text-sm font-bold tracking-[0.2px] uppercase">
+            sign in
+          </p>
+        </BtnForm>
+        <BtnForm onClick={handleSubmitLogIn}>
+          <p className="text-sm font-bold tracking-[0.2px] uppercase">
+            sign up
+          </p>
+        </BtnForm>
       </form>
     </div>
   );
