@@ -44,19 +44,19 @@ const FormComponent = () => {
   };
 
   return (
-    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)]">
-      <h2 className="text-sm font-medium text-center mb-[32px]">
+    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)] laptop:w-[501px] laptop:mx-auto laptop:pt-[60px] laptop:pb-[48px] laptop:px-[32px] ">
+      <h2 className="text-sm font-medium text-center mb-[32px] laptop:font-normal laptop:text-s laptop:text-left ">
         You can use your Google Account to authorize:
       </h2>
       <FormBtn onClick={() => console.log(1)} />
-      <h2 className="mb-[30px] mt-[32px] tracking-[0.2px] text-sm font-medium">
-        Or login to our app using e-mail and <br /> password:
+      <h2 className="mb-[20px] mt-[32px] tracking-[0.2px] text-sm font-medium laptop:font-normal laptop:text-s laptop:text-left laptop:tracking-[0.28px] laptop:mb-[32px]">
+        Or login to our app using e-mail and password:
       </h2>
 
       <form onSubmit={formik.handleSubmit}>
-        <div className="mb-[20px]">
+        <div className="mb-[20px] laptop:mb-[24px]">
           <input
-            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace]"
+            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace] laptop:px-[25] laptop:py-[20] laptop:w-[425px]"
             placeholder="E-mail"
             id="email"
             name="email"
@@ -71,9 +71,9 @@ const FormComponent = () => {
             </p>
           ) : null}
         </div>
-        <div className="mb-[20px]">
+        <div className="mb-[20px] laptop:mb-[40px]">
           <input
-            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace]"
+            className="w-[240px] p-[20px] border-[1px] border-input-border  focus:border-[#4c4ace] laptop:px-[25] laptop:py-[20] laptop:w-[425px]"
             placeholder="Password"
             id="password"
             name="password"

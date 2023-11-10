@@ -8,7 +8,16 @@ module.exports = {
     },
     fontSize: {
       sm: "10px",
+      sl: "12px",
       s: "14px",
+      sxl: "16px",
+      ms: "18px",
+      m: "20px",
+      ml: "22px",
+      mxl: "24px",
+      ls: "26px",
+      lm: "28px",
+      l: "30px",
     },
     fontFamily: {
       mon: ["Montserrat"],
