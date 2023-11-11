@@ -18,13 +18,18 @@ module.exports = {
       ls: "26px",
       lm: "28px",
       l: "30px",
+      ll: "32px",
+      lxl: "34px",
+      xls: "36px",
     },
     fontFamily: {
       mon: ["Montserrat"],
     },
     extend: {
       colors: {
-        "bg-container": "#F5F6FB;",
+        "bg-container": "#F5F6FB",
+        "bg-footer": "#02172A",
+        "text-footer": "rgba(255, 255, 255, 0.40)",
         "active-color": "#FF6B09",
         "white-color": "#FFFFFF",
         "active-btn-form": "#14140b",

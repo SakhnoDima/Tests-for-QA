@@ -10,8 +10,8 @@ const validate = (values) => {
 
   if (!values.password) {
     errors.password = "Required";
-  } else if (values.password.length > 20) {
-    errors.password = "Must be 20 characters or less";
+  } else if (values.password.length > 6) {
+    errors.password = "Must be 6 symbols min";
   }
 
   if (!values.email) {
@@ -25,6 +25,7 @@ const validate = (values) => {
 
 const FormComponent = () => {
   const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -37,14 +38,19 @@ const FormComponent = () => {
   });
 
   const handleSubmitRegister = () => {
-    dispatch(operationsAuth.register(formik.values));
+    try {
+      dispatch(operationsAuth.register(formik.values))
+        .unwrap()
+        .then(console.log)
+        .catch(console.log);
+    } catch (error) {}
   };
   const handleSubmitLogIn = () => {
-    dispatch(operationsAuth.logIn(formik.values));
+    dispatch(operationsAuth.logIn(formik.values)).unwrap().catch(console.log);
   };
 
   return (
-    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)] laptop:w-[501px] laptop:mx-auto laptop:pt-[60px] laptop:pb-[48px] laptop:px-[32px] ">
+    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)] laptop:w-[501px] laptop:mx-auto laptop:pt-[60px] laptop:pb-[48px] laptop:px-[32px] desktop:m-0 ">
       <h2 className="text-sm font-medium text-center mb-[32px] laptop:font-normal laptop:text-s laptop:text-left ">
         You can use your Google Account to authorize:
       </h2>
