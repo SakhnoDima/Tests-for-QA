@@ -54,7 +54,7 @@ const FormComponent = () => {
       <h2 className="text-sm font-medium text-center mb-[32px] laptop:font-normal laptop:text-s laptop:text-left ">
         You can use your Google Account to authorize:
       </h2>
-      <FormBtn onClick={() => console.log(1)} />
+      <FormBtn onClick={() => dispatch()} />
       <h2 className="mb-[20px] mt-[32px] tracking-[0.2px] text-sm font-medium laptop:font-normal laptop:text-s laptop:text-left laptop:tracking-[0.28px] laptop:mb-[32px]">
         Or login to our app using e-mail and password:
       </h2>

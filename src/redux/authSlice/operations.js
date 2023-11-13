@@ -66,3 +66,16 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const googleRegister = createAsyncThunk(
+  "auth/userGoogleRegister",
+  async (_, thunkAPI) => {
+    try {
+      const data = await axios.get("/auth/register/google");
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

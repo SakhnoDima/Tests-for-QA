@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { logIn, register, logOut, refreshUser } from "./operations";
+import {
+  logIn,
+  register,
+  logOut,
+  refreshUser,
+  googleRegister,
+} from "./operations";
 
 const initialState = {
   email: null,
@@ -46,6 +52,10 @@ const authSlice = createSlice({
         state.error = null;
         state.isLoggedIn = false;
         state.token = null;
+      })
+      .addCase(googleRegister.fulfilled, (state, action) => {})
+      .addCase(googleRegister.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });
