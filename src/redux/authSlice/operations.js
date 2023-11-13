@@ -71,8 +71,11 @@ export const googleRegister = createAsyncThunk(
   "auth/userGoogleRegister",
   async (_, thunkAPI) => {
     try {
-      const data = await axios.get("/auth/register/google");
-      console.log(data);
+      const { data } = await axios.get("/auth/register/google", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);

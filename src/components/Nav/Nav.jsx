@@ -42,7 +42,7 @@ const Nav = ({
               className={` ${
                 isMobil ? "py-6 border-b w-full text-center" : " "
               }`}
-              to="/materials"
+              to="/useful-info"
             >
               Materials
             </NavLink>
