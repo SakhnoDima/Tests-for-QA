@@ -38,18 +38,18 @@ const AppBar = () => {
         {isTablet && (
           <div className="flex items-center gap-[40px] desktop:gap-[80px]">
             <Nav isLoggedIn={isLoggedIn} />
-            {isLoggedIn && (
-              <div className="flex items-center gap-[8px] pr-[20px] desktop:gap-[20px]">
-                <Avatar
-                  round="50%"
-                  fgColor="#555555"
-                  color="#ffffff"
-                  name={name}
-                  size="30"
-                />
-                <p>{name}</p>
-              </div>
-            )}
+          </div>
+        )}
+        {isLoggedIn && (
+          <div className="flex items-center gap-[8px] pr-[20px] desktop:gap-[20px]">
+            <Avatar
+              round="50%"
+              fgColor="#555555"
+              color="#ffffff"
+              name={name}
+              size="30"
+            />
+            {!isMobile && <p>{name}</p>}
           </div>
         )}
         {isMobile && (

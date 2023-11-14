@@ -5,7 +5,7 @@ const ButtonHome = ({ children, prim = false }) => {
   return (
     <button
       type="button"
-      className={` w-[280px] h-[212px] flex gap-[28px] items-center justify-center flex-col pt-[60px] pb-[42px] ${
+      className={`w-[280px] h-[212px] flex gap-[28px] items-center justify-center flex-col pt-[60px] pb-[42px] laptop:w-[400px] hover:scale-95 laptop:gap-[8px] ${
         prim ? "bg-bg-footer px-[52px]" : "bg-[#FF6B01] px-[87px]"
       } `}
     >
