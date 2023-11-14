@@ -7,18 +7,18 @@ import { ReactComponent as Close } from "../../images/svg/close.svg";
 import { ReactComponent as Menu } from "../../images/svg/menu-24px.svg";
 import { ReactComponent as Exit } from "../../images/svg/sign-out.svg";
 import useToggleModal from "../../hooks/useToggleModale";
-import { useAuth } from "../../hooks/useAuth";
+import { useAllSelectors } from "../../hooks/useAllSelectors";
 import { useDispatch } from "react-redux";
 import { operationsAuth } from "../../redux/authSlice";
-import ButtonNav from "../ButtonNav/ButtonNav";
+import ButtonOrigin from "../ButtonOrigin/ButtonOrigin";
 import Nav from "../Nav/Nav";
 
 const AppBar = () => {
   const dispath = useDispatch();
   const { isOpen, toggleModal } = useToggleModal();
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({ query: "(min-width: 767px)" });
-  const { email, isLoggedIn } = useAuth();
+  const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
+  const { email, isLoggedIn } = useAllSelectors();
   const name = email?.substr(0, email?.indexOf("@"));
 
   const handleClick = () => {
@@ -35,11 +35,7 @@ const AppBar = () => {
             <Logo />
           </Link>
         </div>
-        {isTablet && (
-          <div className="flex items-center gap-[40px] desktop:gap-[80px]">
-            <Nav isLoggedIn={isLoggedIn} />
-          </div>
-        )}
+        {isTablet && <Nav isLoggedIn={isLoggedIn} />}
         {isLoggedIn && (
           <div className="flex items-center gap-[8px] pr-[20px] desktop:gap-[20px]">
             <Avatar
@@ -49,7 +45,11 @@ const AppBar = () => {
               name={name}
               size="30"
             />
-            {!isMobile && <p>{name}</p>}
+            {!isMobile && (
+              <p className="laptop:text-sl laptop:font-medium laptop:leading-[16px] laptop:tracking-[0.24px] desktop:text-s desktop:font-normal desktop:tracking-[0.28px]">
+                {name}
+              </p>
+            )}
           </div>
         )}
         {isMobile && (
@@ -63,13 +63,13 @@ const AppBar = () => {
             />
             <div className="border-l p-5">
               {isOpen ? (
-                <ButtonNav onClick={toggleModal}>
+                <ButtonOrigin onClick={toggleModal}>
                   <Close />
-                </ButtonNav>
+                </ButtonOrigin>
               ) : (
-                <ButtonNav onClick={toggleModal}>
+                <ButtonOrigin onClick={toggleModal}>
                   <Menu />
-                </ButtonNav>
+                </ButtonOrigin>
               )}
             </div>
           </>
@@ -77,9 +77,9 @@ const AppBar = () => {
       </div>
       {!isMobile && isLoggedIn && (
         <div className="border-l pl-[20px] flex items-center">
-          <ButtonNav onClick={handleClick}>
+          <ButtonOrigin onClick={handleClick}>
             <Exit />
-          </ButtonNav>
+          </ButtonOrigin>
         </div>
       )}
     </>

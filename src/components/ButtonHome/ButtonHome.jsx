@@ -1,16 +1,34 @@
 import React from "react";
-import { ReactComponent as Arrow } from "../../images/svg/arrow.svg";
+import { useDispatch } from "react-redux";
+import { operationsTests } from "../../redux/testsSlice";
+import Button from "./Button";
 
-const ButtonHome = ({ children, prim = false }) => {
+const ButtonHome = () => {
+  const dispatch = useDispatch();
   return (
-    <button
-      type="button"
-      className={`w-[280px] h-[212px] flex gap-[28px] items-center justify-center flex-col pt-[60px] pb-[42px] laptop:w-[400px] hover:scale-95 laptop:gap-[8px] ${
-        prim ? "bg-bg-footer px-[52px]" : "bg-[#FF6B01] px-[87px]"
-      } `}
-    >
-      {children} <Arrow />
-    </button>
+    <div className=" mb-[39px] flex justify-center flex-col items-center gap-[20px] laptop:gap-[30px] laptop:mb-[125px] desktop:mb-[133px] desktop:flex-row desktop:gap-[32px]">
+      <Button
+        link="/test"
+        prim={true}
+        onClick={() => {
+          dispatch(operationsTests.getTechnical());
+        }}
+      >
+        <p className="text-white-color text-center text-mxl non-italic font-extrabold leading-none tracking-[0.48px] laptop:text-ll laptop:tracking-[0.64px]">
+          QA technical training
+        </p>
+      </Button>
+      <Button
+        link="/test"
+        onClick={() => {
+          dispatch(operationsTests.getTheory());
+        }}
+      >
+        <p className="text-white-color text-center text-mxl non-italic font-extrabold leading-none tracking-[0.48px] laptop:text-ll laptop:tracking-[0.64px]">
+          Testing  theory
+        </p>
+      </Button>
+    </div>
   );
 };
 

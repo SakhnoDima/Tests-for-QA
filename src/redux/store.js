@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice/auth";
+import testsReducer from "./testsSlice/tests";
 import {
   persistStore,
   persistReducer,
@@ -19,6 +20,7 @@ const authPersistConfig = {
 };
 export const store = configureStore({
   reducer: {
+    tests: testsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>
