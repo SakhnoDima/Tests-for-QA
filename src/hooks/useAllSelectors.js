@@ -7,11 +7,13 @@ export const useAllSelectors = () => {
   const email = useSelector(selectorsAuth.getUserEmail);
   const error = useSelector(selectorsAuth.getError);
   const tests = useSelector(selectorsTests.getTests);
+  const results = useSelector(selectorsTests.getResults);
 
   return {
     isLoggedIn,
     email,
     error,
     tests,
+    results,
   };
 };

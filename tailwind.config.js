@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     dropShadow: {
       "btn-shadow": "0px 2px 2px rgba(0, 0, 0, 0.10)",
-      "form-shadow": "0px 4px 15px 0px rgba(2, 23, 42, 0.10)",
+      "form-shadow": "0 4px 15px rgba(2, 23, 42, 0.10)",
     },
     fontSize: {
       sm: "10px",

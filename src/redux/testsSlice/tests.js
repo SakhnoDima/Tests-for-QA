@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTechnical, getTheory } from "./operations";
+import {
+  getTechnical,
+  getTechnicalAnswers,
+  getTheory,
+  getTheoryAnswers,
+} from "./operations";
 
 const initialState = {
   tests: [],
+  results: [],
   error: null,
 };
 
@@ -21,6 +27,18 @@ const testsSlice = createSlice({
         state.tests = action.payload;
       })
       .addCase(getTechnical.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(getTechnicalAnswers.fulfilled, (state, action) => {
+        state.results = action.payload;
+      })
+      .addCase(getTechnicalAnswers.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(getTheoryAnswers.fulfilled, (state, action) => {
+        state.results = action.payload;
+      })
+      .addCase(getTheoryAnswers.rejected, (state, action) => {
         state.error = action.payload;
       });
   },

@@ -28,3 +28,33 @@ export const getTechnical = createAsyncThunk(
     }
   }
 );
+
+export const getTechnicalAnswers = createAsyncThunk(
+  "tests/technicalAnswers",
+
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post("/tests/result/tech", credentials);
+
+      return data;
+    } catch (error) {
+      console.log(error.response.data.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const getTheoryAnswers = createAsyncThunk(
+  "tests/theoryAnswers",
+
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post("/tests/result/theory", credentials);
+
+      return data;
+    } catch (error) {
+      console.log(error.response.data.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

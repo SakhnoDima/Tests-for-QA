@@ -57,7 +57,6 @@ const FormComponent = () => {
       <FormBtn
         onClick={() => {
           dispatch(operationsAuth.googleRegister());
-          console.log(1);
         }}
       />
       <h2 className="mb-[20px] mt-[32px] tracking-[0.2px] text-sm font-medium laptop:font-normal laptop:text-s laptop:text-left laptop:tracking-[0.28px] laptop:mb-[32px]">
