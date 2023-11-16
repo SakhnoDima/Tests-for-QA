@@ -25,7 +25,7 @@ const ButtonHome = () => {
         }}
       >
         <p className="text-white-color text-center text-mxl non-italic font-extrabold leading-none tracking-[0.48px] laptop:text-ll laptop:tracking-[0.64px]">
-          Testing  theory
+          Testing theory
         </p>
       </Button>
     </div>

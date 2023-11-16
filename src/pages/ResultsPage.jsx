@@ -1,11 +1,27 @@
 import React from "react";
-
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { ReactComponent as Cat } from "../images/svg/Cat.svg";
 import { useAllSelectors } from "../hooks/useAllSelectors";
+import Button from "../components/ButtonHome/Button";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ResultsPage = () => {
   const { tests, results } = useAllSelectors();
   console.log(tests);
   console.log(results);
+
+  const data = {
+    labels: ["Incorrect", "Correct"],
+    datasets: [
+      {
+        label: " Answers:",
+        data: [results.false, results.true],
+        backgroundColor: ["#D7D7D7", "#FF6B09"],
+      },
+    ],
+  };
 
   return (
     <div>
@@ -18,16 +34,28 @@ const ResultsPage = () => {
           : "[ Testing  theory _ ]"}
       </p>
       <span className="mb-[32px] block w-[130px] h-[1px] mx-auto bg-[#00122F]/10 laptop:w-[336px] laptop:mb-[40px] desktop:mb-[32px] "></span>
-
-      <div className="flex justify-center">
-        <p className="text-sm">
-          Correct answers - <span>{results.true}</span>
+      <Pie data={data} />
+      <div className="mt-[20px] flex justify-center">
+        <p className="text-sm font-medium tracking-[0.2px]">
+          Correct answers - <span className="font-bold">{results.true}</span>
         </p>
         <span className="ml-[10px] mr-[10px] w-[1px] bg-[#00122F]/10"></span>
-        <p className="text-sm">
-          Total questions - <span>{results.total}</span>
+        <p className="text-sm font-medium tracking-[0.2px]">
+          Total questions - <span className="font-bold">{results.total}</span>
         </p>
       </div>
+      <Cat className="mx-auto my-[20px] " />
+      <p className="mb-[18px] text-center text-sxl font-bold tracking-[0.32px]">
+        Not bad!
+      </p>
+      <p className="mb-[20px] text-center text-sm font-medium tracking-[0.2px]">
+        But you still need to learn some materials.
+      </p>
+      <Button cls="tryAgain" link="/test" testsBtn={true}>
+        <p className="text-s text-white-color font-normal tracking-[0.28px]">
+          Try again
+        </p>
+      </Button>
     </div>
   );
 };
