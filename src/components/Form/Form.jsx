@@ -5,12 +5,15 @@ import { operationsAuth } from "../../redux/authSlice";
 import FormBtn from "../FormBtn/FormBtn";
 import { BtnForm } from "../ButtonForm/BtnForm";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const validate = (values) => {
   const errors = {};
 
   if (!values.password) {
     errors.password = "Required";
-  } else if (values.password.length > 6) {
+  } else if (values.password.length < 6) {
     errors.password = "Must be 6 symbols min";
   }
 
@@ -41,12 +44,22 @@ const FormComponent = () => {
     try {
       dispatch(operationsAuth.register(formik.values))
         .unwrap()
-        .then(console.log)
-        .catch(console.log);
-    } catch (error) {}
+        .then((response) => {
+          toast.success(response.message);
+        })
+        .catch((error) => {
+          toast.error(error);
+        });
+    } catch (error) {
+      toast(error.message);
+    }
   };
   const handleSubmitLogIn = () => {
-    dispatch(operationsAuth.logIn(formik.values)).unwrap().catch(console.log);
+    dispatch(operationsAuth.logIn(formik.values))
+      .unwrap()
+      .catch((error) => {
+        toast.error(error);
+      });
   };
 
   return (
@@ -109,6 +122,7 @@ const FormComponent = () => {
           </p>
         </BtnForm>
       </form>
+      <ToastContainer />
     </div>
   );
 };
