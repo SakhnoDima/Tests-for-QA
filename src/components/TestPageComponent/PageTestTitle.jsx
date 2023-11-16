@@ -13,7 +13,6 @@ const PageTestTitle = ({ answers }) => {
       switch (tests[0]?.test) {
         case "tech":
           dispatch(operationsTests.getTechnicalAnswers(answers));
-          console.log(answers);
           break;
         case "theory":
           dispatch(operationsTests.getTheoryAnswers(answers));
@@ -31,7 +30,11 @@ const PageTestTitle = ({ answers }) => {
           ? "[ QA technical training ]"
           : "[ Testing  theory _ ]"}
       </p>
-      <Button testsBtn={true} onClick={handleSendAnswer}>
+      <Button
+        testsBtn={true}
+        onClick={handleSendAnswer}
+        link={answers.length === 12 ? "/results" : "/"}
+      >
         <p className="text-white-color text-sm not-italic font-normal tracking-[0.2px] laptop:text-s laptop:font-medium laptop:tracking-[0.28px] ">
           Finish test
         </p>
