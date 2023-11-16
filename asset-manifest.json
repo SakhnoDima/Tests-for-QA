@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/Tests-for-QA/static/css/main.abd8f69b.css",
-    "main.js": "/Tests-for-QA/static/js/main.a3206943.js",
+    "main.css": "/Tests-for-QA/static/css/main.82c09c34.css",
+    "main.js": "/Tests-for-QA/static/js/main.6bfd2673.js",
+    "static/media/Cat.svg": "/Tests-for-QA/static/media/Cat.68c322406fdff30d0779d71267058f50.svg",
     "static/media/logo 1.svg": "/Tests-for-QA/static/media/logo 1.17725b9a629c016e4391c9484a220f03.svg",
     "static/media/google.svg": "/Tests-for-QA/static/media/google.f04463201c59f95bf3d62b7a2359d1f0.svg",
     "static/media/copyright-24px 1.svg": "/Tests-for-QA/static/media/copyright-24px 1.139ab7d216203131e2ac810917c609af.svg",
@@ -14,11 +15,11 @@
     "static/media/close.svg": "/Tests-for-QA/static/media/close.45ad62a0dc972459c8cba361c3b5198d.svg",
     "static/media/Vector 1.svg": "/Tests-for-QA/static/media/Vector 1.df002bea85746c5497344c148bea7bb6.svg",
     "static/media/circle.svg": "/Tests-for-QA/static/media/circle.67e9b309097e587d8487993ec6f5a9db.svg",
-    "main.abd8f69b.css.map": "/Tests-for-QA/static/css/main.abd8f69b.css.map",
-    "main.a3206943.js.map": "/Tests-for-QA/static/js/main.a3206943.js.map"
+    "main.82c09c34.css.map": "/Tests-for-QA/static/css/main.82c09c34.css.map",
+    "main.6bfd2673.js.map": "/Tests-for-QA/static/js/main.6bfd2673.js.map"
   },
   "entrypoints": [
-    "static/css/main.abd8f69b.css",
-    "static/js/main.a3206943.js"
+    "static/css/main.82c09c34.css",
+    "static/js/main.6bfd2673.js"
   ]
 }
