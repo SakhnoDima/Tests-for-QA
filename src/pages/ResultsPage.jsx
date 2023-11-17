@@ -9,9 +9,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ResultsPage = () => {
   const { tests, results } = useAllSelectors();
-  console.log(tests);
-  console.log(results);
-
   const data = {
     labels: ["Incorrect", "Correct"],
     datasets: [
@@ -24,39 +21,41 @@ const ResultsPage = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-sl font-bold text-center mt-[34px] mb-[12px] tracking-[0.24px]">
+    <>
+      <h2 className="text-sl font-bold text-center mt-[34px] mb-[12px] tracking-[0.24px] laptop:mt-[42px] laptop:mb-[8px] laptop:text-ml laptop:tracking-[0.44px]  ">
         Results
       </h2>
-      <p className="text-center text-sm font-medium tracking-[0.2px] mb-[16px] ">
+      <p className="text-center text-sm font-medium tracking-[0.2px] mb-[16px] laptop:mb-[32px] laptop:text-s laptop:tracking-[0.28px]">
         {tests[0].test === "tech"
           ? "[ QA technical training ]"
           : "[ Testing  theory _ ]"}
       </p>
-      <span className="mb-[32px] block w-[130px] h-[1px] mx-auto bg-[#00122F]/10 laptop:w-[336px] laptop:mb-[40px] desktop:mb-[32px] "></span>
-      <Pie data={data} />
-      <div className="mt-[20px] flex justify-center">
-        <p className="text-sm font-medium tracking-[0.2px]">
+      <span className="mb-[32px] block w-[130px] h-[1px] mx-auto bg-[#00122F]/10 laptop:w-[336px] laptop:mb-[40px] desktop:w-[321px] desktop:mb-[40px] "></span>
+      <div className="w-[156px] h-[156px] mx-auto laptop:w-[285px] laptop:h-[285px]">
+        <Pie data={data} />
+      </div>
+      <div className="mt-[20px] flex justify-center laptop:mt-[32px]">
+        <p className="text-sm font-medium tracking-[0.2px] laptop:text-sxl laptop:font-normal laptop:tracking-[0.32px] ">
           Correct answers - <span className="font-bold">{results.true}</span>
         </p>
-        <span className="ml-[10px] mr-[10px] w-[1px] bg-[#00122F]/10"></span>
-        <p className="text-sm font-medium tracking-[0.2px]">
+        <span className="mx-[10px] w-[1px] bg-[#00122F]/10 laptop:mx-[20px]"></span>
+        <p className="text-sm font-medium tracking-[0.2px] laptop:text-sxl laptop:font-normal laptop:tracking-[0.32px]">
           Total questions - <span className="font-bold">{results.total}</span>
         </p>
       </div>
-      <Cat className="mx-auto my-[20px] " />
-      <p className="mb-[18px] text-center text-sxl font-bold tracking-[0.32px]">
+      <Cat className="mx-auto my-[20px] laptop:w-[176px] laptop:mt-[32px] laptop:h-[176px] laptop:mb-[8px] desktop:mt-[28px]" />
+      <p className="mb-[18px] text-center text-sxl font-bold tracking-[0.32px] laptop:mb-[8px] laptop:text-ml laptop:leading-[30px] laptop:tracking-[0.44px]">
         Not bad!
       </p>
-      <p className="mb-[20px] text-center text-sm font-medium tracking-[0.2px]">
+      <p className="mb-[20px] text-center text-sm font-medium tracking-[0.2px] laptop:mb-[40px] laptop:text-m laptop:tracking-[0.4px]">
         But you still need to learn some materials.
       </p>
       <Button cls="tryAgain" link="/test" testsBtn={true}>
-        <p className="text-s text-white-color font-normal tracking-[0.28px]">
+        <p className="text-s text-white-color font-normal tracking-[0.28px] laptop:font-medium">
           Try again
         </p>
       </Button>
-    </div>
+    </>
   );
 };
 
