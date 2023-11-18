@@ -1,6 +1,7 @@
 import React from "react";
 import { useAllSelectors } from "../../hooks/useAllSelectors";
 import FormQuestion from "../Form/FormQuestion";
+import Line from "../Line/Line";
 
 const QuestionsCard = ({ index, setAnswers, answers }) => {
   const { tests } = useAllSelectors();
@@ -16,7 +17,7 @@ const QuestionsCard = ({ index, setAnswers, answers }) => {
       <p className="mb-[32px] text-center text-sl font-bold leading-[18px] tracking-[0.24px] laptop:text-ms laptop:leading-[30px] laptop:tracking-[0.44px]">
         {tests[index]?.question}
       </p>
-      <span className="mb-[32px] block w-[130px] h-[1px] mx-auto bg-[#00122F]/10 laptop:w-[336px] laptop:mb-[40px] desktop:mb-[32px] "></span>
+      <Line cls={"questionLine"} />
       <FormQuestion index={index} setAnswers={setAnswers} answers={answers} />
     </div>
   );

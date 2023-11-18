@@ -5,6 +5,7 @@ import {
   logOut,
   refreshUser,
   googleRegister,
+  sendLetter,
 } from "./operations";
 
 const initialState = {
@@ -54,6 +55,10 @@ const authSlice = createSlice({
       })
       .addCase(googleRegister.fulfilled, (state, action) => {})
       .addCase(googleRegister.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(sendLetter.fulfilled, (state, action) => {})
+      .addCase(sendLetter.rejected, (state, action) => {
         state.error = action.payload;
       });
   },

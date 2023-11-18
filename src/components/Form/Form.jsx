@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { operationsAuth } from "../../redux/authSlice";
@@ -27,6 +27,7 @@ const validate = (values) => {
 };
 
 const FormComponent = () => {
+  const [email, setEmail] = useState();
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -42,6 +43,8 @@ const FormComponent = () => {
 
   const handleSubmitRegister = () => {
     try {
+      setEmail(formik.values.email);
+
       dispatch(operationsAuth.register(formik.values))
         .unwrap()
         .then((response) => {
@@ -61,9 +64,19 @@ const FormComponent = () => {
         toast.error(error);
       });
   };
+  const handleResendLetter = () => {
+    dispatch(operationsAuth.sendLetter({ email: email }))
+      .unwrap()
+      .then((response) => {
+        toast.success(response.message);
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
+  };
 
   return (
-    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)] laptop:w-[501px] laptop:mx-auto laptop:pt-[60px] laptop:pb-[48px] laptop:px-[32px] desktop:m-0 ">
+    <div className="bg-white-color w-[280px] px-[20px] py-[40px] shadow-[0px_4px_15px_0px_rgba(2,23,42,0.10)] laptop:w-[501px] laptop:mx-auto laptop:pt-[60px] laptop:pb-[48px] laptop:px-[32px] desktop:m-0 desktop:min-w-[501px]">
       <h2 className="text-sm font-medium text-center mb-[32px] laptop:font-normal laptop:text-s laptop:text-left ">
         You can use your Google Account to authorize:
       </h2>
@@ -116,11 +129,18 @@ const FormComponent = () => {
             sign in
           </p>
         </BtnForm>
-        <BtnForm onClick={handleSubmitLogIn}>
+        <BtnForm $style={"logIn"} onClick={handleSubmitLogIn}>
           <p className="text-sm font-bold tracking-[0.2px] uppercase">
             sign up
           </p>
         </BtnForm>
+        {email && (
+          <BtnForm $style={"resendEmail"} onClick={handleResendLetter}>
+            <p className="text-sm font-bold tracking-[0.2px] uppercase laptop:text-s">
+              Resend verification Latter
+            </p>
+          </BtnForm>
+        )}
       </form>
       <ToastContainer />
     </div>

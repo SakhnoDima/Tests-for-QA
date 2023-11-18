@@ -18,7 +18,7 @@ const Nav = ({
     <nav
       className={` ${
         isMobil
-          ? `absolute left-0 w-[320px] flex flex-col justify-center items-center bg-bg-container ${
+          ? `absolute z-10 left-0 w-[320px] flex flex-col justify-center items-center bg-bg-container ${
               isLoggedIn ? "-bottom-[260px]" : "-bottom-[147px]"
             } ${isOpen ? "visible" : "invisible"}`
           : `w-[320px] flex gap-[60px] items-baseline justify-between bg-bg-container 

@@ -4,17 +4,19 @@ import { Pie } from "react-chartjs-2";
 import { ReactComponent as Cat } from "../images/svg/Cat.svg";
 import { useAllSelectors } from "../hooks/useAllSelectors";
 import Button from "../components/ButtonHome/Button";
+import Line from "../components/Line/Line";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ResultsPage = () => {
   const { tests, results } = useAllSelectors();
+
   const data = {
     labels: ["Incorrect", "Correct"],
     datasets: [
       {
-        label: " Answers:",
-        data: [results.false, results.true],
+        label: "Answers:",
+        data: [results?.false, results?.true],
         backgroundColor: ["#D7D7D7", "#FF6B09"],
       },
     ],
@@ -38,7 +40,7 @@ const ResultsPage = () => {
         <p className="text-sm font-medium tracking-[0.2px] laptop:text-sxl laptop:font-normal laptop:tracking-[0.32px] ">
           Correct answers - <span className="font-bold">{results.true}</span>
         </p>
-        <span className="mx-[10px] w-[1px] bg-[#00122F]/10 laptop:mx-[20px]"></span>
+        <Line cls={"resultLine"} />
         <p className="text-sm font-medium tracking-[0.2px] laptop:text-sxl laptop:font-normal laptop:tracking-[0.32px]">
           Total questions - <span className="font-bold">{results.total}</span>
         </p>

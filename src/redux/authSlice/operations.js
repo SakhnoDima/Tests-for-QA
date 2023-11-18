@@ -47,6 +47,19 @@ export const logOut = createAsyncThunk("auth/logOut", async (_, thunkAPI) => {
   }
 });
 
+export const sendLetter = createAsyncThunk(
+  "auth/sendLetter",
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post("/auth/verify", credentials);
+      token.unSet();
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 export const refreshUser = createAsyncThunk(
   "auth/userRefresh",
   async (_, thunkAPI) => {
