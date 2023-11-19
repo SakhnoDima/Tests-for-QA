@@ -6,7 +6,7 @@ import MaterialCard from "../components/MaterialCard/MaterialCard";
 const MaterialPAge = () => {
   return (
     <Container cls={"material"}>
-      <div className="pt-[62px] laptop:pt-[182px] desktop:pt-[100px]">
+      <div className="bg-mob pt-[62px] laptop:pt-[182px] desktop:pt-[100px]">
         <MaterialCard title="Useful literature" list={literature} />
         <MaterialCard title="Useful resources" list={resources} isLink />
       </div>
