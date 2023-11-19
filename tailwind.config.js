@@ -26,6 +26,14 @@ module.exports = {
       mon: ["Montserrat"],
     },
     extend: {
+      backgroundImage: {
+        mob: "url('/src/images/picMob1x.png')",
+        mob2x: "url('/src/images/picMob2x.png')",
+        tab: "url('/src/images/picTab.png')",
+        tab2x: "url('/src/images/picTab2x.png')",
+        desk: "url('/src/images/picDes.png')",
+        desk2x: "url('/src/images/picDes2x.png')",
+      },
       colors: {
         "bg-container": "#F5F6FB",
         "bg-footer": "#02172A",
@@ -36,6 +44,7 @@ module.exports = {
         "btn-color": "#FAFAFA",
         "input-border": "#CED2D1",
         "active-border": "#3d3f3e",
+        "active-link": "#3E29F6",
       },
     },
     screens: {
@@ -46,5 +55,5 @@ module.exports = {
       desktop: "1280px",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-retina")],
 };

@@ -5,6 +5,7 @@ import { ReactComponent as Cat } from "../images/svg/Cat.svg";
 import { useAllSelectors } from "../hooks/useAllSelectors";
 import Button from "../components/ButtonHome/Button";
 import Line from "../components/Line/Line";
+import Container from "../components/Container";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -23,7 +24,7 @@ const ResultsPage = () => {
   };
 
   return (
-    <>
+    <Container>
       <h2 className="text-sl font-bold text-center mt-[34px] mb-[12px] tracking-[0.24px] laptop:mt-[42px] laptop:mb-[8px] laptop:text-ml laptop:tracking-[0.44px]  ">
         Results
       </h2>
@@ -57,7 +58,7 @@ const ResultsPage = () => {
           Try again
         </p>
       </Button>
-    </>
+    </Container>
   );
 };
 

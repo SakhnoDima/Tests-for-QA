@@ -5,13 +5,14 @@ import { ReactComponent as Arrow } from "../images/svg/arrowLong.svg";
 
 import PageTestTitle from "../components/TestPageComponent/PageTestTitle";
 import QuestionsCard from "../components/TestPageComponent/QuestionsCard";
+import Container from "../components/Container";
 
 const TestPage = () => {
   const [answers, setAnswers] = useState([]);
   const [index, setIndex] = useState(0);
   const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
   return (
-    <>
+    <Container>
       <PageTestTitle answers={answers} />
       <QuestionsCard index={index} setAnswers={setAnswers} answers={answers} />
       <div className=" flex justify-between items-center laptop:mb-[50px] ">
@@ -44,7 +45,7 @@ const TestPage = () => {
           <Arrow />
         </ButtonOrigin>
       </div>
-    </>
+    </Container>
   );
 };
 

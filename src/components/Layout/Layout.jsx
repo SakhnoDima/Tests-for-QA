@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import AppBar from "../AppBar/AppBar";
 import { Outlet } from "react-router-dom";
-import Container from "../Container";
+
 import Footer from "../Footer/Footer";
 
 const Layout = () => {
@@ -11,13 +11,10 @@ const Layout = () => {
         <AppBar />
       </header>
       <main className=" bg-bg-container flex grow ">
-        <Container>
-          <Suspense fallback={<p>Loading ... </p>}>
-            <Outlet />
-          </Suspense>
-        </Container>
+        <Suspense fallback={<p>Loading ... </p>}>
+          <Outlet />
+        </Suspense>
       </main>
-
       <footer className="bg-bg-footer px-[21px] py-[10px] laptop:py-[19px]">
         <Footer />
       </footer>

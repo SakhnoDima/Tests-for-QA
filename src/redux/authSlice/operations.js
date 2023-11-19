@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { BASE_URL } from "../../constant/constant";
 
-axios.defaults.baseURL = "https://restapitestqa.onrender.com/api";
-
+axios.defaults.baseURL = BASE_URL;
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;

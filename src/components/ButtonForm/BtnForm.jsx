@@ -19,7 +19,7 @@ export const BtnForm = ({ children, onClick, $style }) => {
          
         ${
           $style === "resendEmail"
-            ? "block mx-auto mt-[10px] hover:underline hover:text-[#3E29F6]"
+            ? "block mx-auto mt-[10px] hover:underline hover:text-active-link"
             : ""
         } `}
     >

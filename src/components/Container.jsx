@@ -1,13 +1,18 @@
 import React from "react";
 
-const Container = ({ children }) => {
+const Container = ({ children, cls = "" }) => {
   return (
-    <section className="mx-auto w-[320px] px-5 laptop:w-[768px]  desktop:px-[124px] desktop:w-[100%] ">
+    <section
+      className={`${
+        cls === "material"
+          ? "bg-mob bg-no-repeat bg-right bg-cover retina:bg-mob2x laptop:bg-tab laptop:retina:bg-tab2x laptop:px-[32px] desktop:bg-desk desktop:retina:bg-desk2x desktop:px-[123px]"
+          : ""
+      }
+    mx-auto w-[320px] px-5 laptop:w-[768px] desktop:px-[124px] desktop:w-[100%] `}
+    >
       {children}
     </section>
   );
 };
 
 export default Container;
-
-// laptop:px-[118px] - не корректно отображался текст на Home
