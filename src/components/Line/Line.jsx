@@ -16,6 +16,11 @@ const Line = ({ cls }) => {
               ? "h-[1px] w-[120px] block mt-[12px] mb-[8px] laptop:mt-[20px] laptop:mb-[24px]"
               : ""
           }
+           ${
+             cls === "contact"
+               ? "mx-auto h-[1px] w-[130px] block mt-[20px] mb-[40px] laptop:w-[321px]"
+               : ""
+           }
 `}
     ></span>
   );
