@@ -24,7 +24,7 @@ const ResultsPage = () => {
   };
 
   return (
-    <Container>
+    <Container cls="main">
       <h2 className="text-sl font-bold text-center mt-[34px] mb-[12px] tracking-[0.24px] laptop:mt-[42px] laptop:mb-[8px] laptop:text-ml laptop:tracking-[0.44px]  ">
         Results
       </h2>

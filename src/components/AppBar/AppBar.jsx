@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { operationsAuth } from "../../redux/authSlice";
 import ButtonOrigin from "../ButtonOrigin/ButtonOrigin";
 import Nav from "../Nav/Nav";
+import { AnimatePresence } from "framer-motion";
 
 const AppBar = () => {
   const dispath = useDispatch();
@@ -52,28 +53,30 @@ const AppBar = () => {
             )}
           </div>
         )}
-        {isMobile && (
-          <>
-            <Nav
-              onClose={toggleModal}
-              handleClick={handleClick}
-              isLoggedIn={isLoggedIn}
-              isMobil={true}
-              isOpen={isOpen}
-            />
-            <div className="border-l p-5">
-              {isOpen ? (
-                <ButtonOrigin onClick={toggleModal}>
-                  <Close />
-                </ButtonOrigin>
-              ) : (
-                <ButtonOrigin onClick={toggleModal}>
-                  <Menu />
-                </ButtonOrigin>
-              )}
-            </div>
-          </>
-        )}
+        <AnimatePresence initial={false} mode="wait">
+          {isMobile && (
+            <>
+              <Nav
+                onClose={toggleModal}
+                handleClick={handleClick}
+                isLoggedIn={isLoggedIn}
+                isMobil={true}
+                isOpen={isOpen}
+              />
+              <div className="border-l p-5">
+                {isOpen ? (
+                  <ButtonOrigin onClick={toggleModal}>
+                    <Close />
+                  </ButtonOrigin>
+                ) : (
+                  <ButtonOrigin onClick={toggleModal}>
+                    <Menu />
+                  </ButtonOrigin>
+                )}
+              </div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
       {!isMobile && isLoggedIn && (
         <div className="border-l pl-[20px] flex items-center">

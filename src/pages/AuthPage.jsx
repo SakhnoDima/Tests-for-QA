@@ -5,7 +5,7 @@ import Container from "../components/Container";
 
 const AuthPage = () => {
   return (
-    <Container>
+    <Container cls="main">
       <div className="pt-[42px] pb-[34px] mx-auto  laptop:pt-[80px] desktop:flex items-center gap-[112px] ">
         <TextAuth />
         <FormComponent />

@@ -10,17 +10,26 @@ import Container from "../components/Container";
 const TestPage = () => {
   const [answers, setAnswers] = useState([]);
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
   const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
   return (
-    <Container>
+    <Container cls="main">
       <PageTestTitle answers={answers} />
-      <QuestionsCard index={index} setAnswers={setAnswers} answers={answers} />
+
+      <QuestionsCard
+        index={index}
+        setAnswers={setAnswers}
+        answers={answers}
+        direction={direction}
+      />
+
       <div className=" flex justify-between items-center laptop:mb-[50px] ">
         <ButtonOrigin
           name="decrement"
           disabled={index === 0}
           onClick={() => {
             setIndex((prev) => prev - 1);
+            setDirection(-1);
           }}
         >
           <Arrow className="rotate-180" />
@@ -35,6 +44,7 @@ const TestPage = () => {
           disabled={index === 11}
           onClick={() => {
             setIndex((prev) => prev + 1);
+            setDirection(+1);
           }}
         >
           {isTablet && (

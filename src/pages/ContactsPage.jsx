@@ -5,7 +5,7 @@ import CommandCard from "../components/CommandCard/CommandCard";
 
 const ContactsPage = () => {
   return (
-    <Container>
+    <Container cls="main">
       <div className=" w-[100%] pt-[42px] pb-[58px]">
         <h2 className="text-center text-ms font-bold tracking-[0.36px] laptop:text-ml laptop:tracking-[0.44px]">
           Our team

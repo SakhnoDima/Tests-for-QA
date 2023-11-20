@@ -1,7 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Exit } from "../../images/svg/sign-out.svg";
 import ButtonOrigin from "../ButtonOrigin/ButtonOrigin";
+import { navigationVariants } from "../../constant/variantsPresents";
 
 const Nav = ({
   isLoggedIn,
@@ -15,7 +17,15 @@ const Nav = ({
     handleClick();
   };
   return (
-    <nav
+    <motion.nav
+      variants={navigationVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      transition={{
+        type: "tween",
+      }}
+      key={isOpen}
       className={` ${
         isMobil
           ? `absolute z-10 left-0 w-[320px] flex flex-col justify-center items-center bg-bg-container ${
@@ -80,7 +90,7 @@ const Nav = ({
           </ButtonOrigin>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

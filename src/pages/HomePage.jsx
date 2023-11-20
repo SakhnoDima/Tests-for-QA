@@ -5,7 +5,7 @@ import Container from "../components/Container";
 
 const Home = () => {
   return (
-    <Container>
+    <Container cls="main">
       <HomeTitle />
       <ButtonHome />
     </Container>
