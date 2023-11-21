@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Tests-for-QA/static/css/main.9e1042b9.css",
-    "main.js": "/Tests-for-QA/static/js/main.be88af1c.js",
+    "main.css": "/Tests-for-QA/static/css/main.e344aa1e.css",
+    "main.js": "/Tests-for-QA/static/js/main.ca5251c8.js",
     "static/media/picDes2x.png": "/Tests-for-QA/static/media/picDes2x.850b44192e1d4d14a179.png",
     "static/media/picTab2x.png": "/Tests-for-QA/static/media/picTab2x.c8460c391358a4253367.png",
     "static/media/picDes.png": "/Tests-for-QA/static/media/picDes.ea0e614ecce24b5de54f.png",
@@ -22,11 +22,11 @@
     "static/media/close.svg": "/Tests-for-QA/static/media/close.45ad62a0dc972459c8cba361c3b5198d.svg",
     "static/media/Vector 1.svg": "/Tests-for-QA/static/media/Vector 1.df002bea85746c5497344c148bea7bb6.svg",
     "static/media/circle.svg": "/Tests-for-QA/static/media/circle.67e9b309097e587d8487993ec6f5a9db.svg",
-    "main.9e1042b9.css.map": "/Tests-for-QA/static/css/main.9e1042b9.css.map",
-    "main.be88af1c.js.map": "/Tests-for-QA/static/js/main.be88af1c.js.map"
+    "main.e344aa1e.css.map": "/Tests-for-QA/static/css/main.e344aa1e.css.map",
+    "main.ca5251c8.js.map": "/Tests-for-QA/static/js/main.ca5251c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e1042b9.css",
-    "static/js/main.be88af1c.js"
+    "static/css/main.e344aa1e.css",
+    "static/js/main.ca5251c8.js"
   ]
 }
