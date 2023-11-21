@@ -30,14 +30,10 @@ export const questionsVariants = {
 export const navigationVariants = {
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
   },
   hidden: {
     opacity: 0,
-    x: -800,
-  },
-  exit: {
-    opacity: 0,
-    x: -800,
+    y: -800,
   },
 };

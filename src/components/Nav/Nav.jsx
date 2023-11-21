@@ -21,16 +21,18 @@ const Nav = ({
       variants={navigationVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
+      exit="hidden"
       transition={{
-        type: "tween",
+        type: "spring",
+        damping: 30,
+        stiffness: 200,
       }}
       key={isOpen}
       className={` ${
         isMobil
           ? `absolute z-10 left-0 w-[320px] flex flex-col justify-center items-center bg-bg-container ${
               isLoggedIn ? "-bottom-[260px]" : "-bottom-[147px]"
-            } ${isOpen ? "visible" : "invisible"}`
+            } `
           : `w-[320px] flex gap-[60px] items-baseline justify-between bg-bg-container 
             ${!isLoggedIn && "justify-between"} desktop:gap-[80px]`
       }  `}

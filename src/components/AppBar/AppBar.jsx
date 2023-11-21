@@ -53,30 +53,32 @@ const AppBar = () => {
             )}
           </div>
         )}
-        <AnimatePresence initial={false} mode="wait">
-          {isMobile && (
-            <>
-              <Nav
-                onClose={toggleModal}
-                handleClick={handleClick}
-                isLoggedIn={isLoggedIn}
-                isMobil={true}
-                isOpen={isOpen}
-              />
-              <div className="border-l p-5">
-                {isOpen ? (
-                  <ButtonOrigin onClick={toggleModal}>
-                    <Close />
-                  </ButtonOrigin>
-                ) : (
-                  <ButtonOrigin onClick={toggleModal}>
-                    <Menu />
-                  </ButtonOrigin>
-                )}
-              </div>
-            </>
-          )}
-        </AnimatePresence>
+        {isMobile && (
+          <>
+            <AnimatePresence initial={false} mode="wait">
+              {isOpen && (
+                <Nav
+                  onClose={toggleModal}
+                  handleClick={handleClick}
+                  isLoggedIn={isLoggedIn}
+                  isMobil={true}
+                  isOpen={isOpen}
+                />
+              )}
+            </AnimatePresence>
+            <div className="border-l p-5">
+              {isOpen ? (
+                <ButtonOrigin onClick={toggleModal}>
+                  <Close />
+                </ButtonOrigin>
+              ) : (
+                <ButtonOrigin onClick={toggleModal}>
+                  <Menu />
+                </ButtonOrigin>
+              )}
+            </div>
+          </>
+        )}
       </div>
       {!isMobile && isLoggedIn && (
         <div className="border-l pl-[20px] flex items-center">

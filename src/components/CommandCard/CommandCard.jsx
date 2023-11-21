@@ -7,6 +7,7 @@ const CommandCard = () => {
     <>
       {comand.map(({ foto, name, position, text }) => (
         <motion.div
+          key={name}
           className="w-[280px] bg-white-color laptop:w-[336px] laptop:mx-auto "
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}

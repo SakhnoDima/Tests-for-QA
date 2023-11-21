@@ -6,7 +6,7 @@ const Container = ({ children, cls = "" }) => {
       className={` mx-auto   px-5 
       ${
         cls === "main"
-          ? " w-[320px]laptop:w-[768px] desktop:px-[124px] desktop:w-[100%]"
+          ? " w-[320px] laptop:w-[768px] desktop:px-[124px] desktop:w-[100%]"
           : ""
       }
        ${
