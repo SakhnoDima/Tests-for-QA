@@ -81,7 +81,7 @@ const FormComponent = () => {
         You can use your Google Account to authorize:
       </h2>
       <form
-        action="http://qa-test-sandy.vercel.app/api/auth/register/google"
+        action="https://restapitestqa.onrender.com/api/auth/register/google"
         method="get"
       >
         <FormBtn />
