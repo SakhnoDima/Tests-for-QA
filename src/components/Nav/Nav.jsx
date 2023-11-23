@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as Exit } from "../../images/svg/sign-out.svg";
+
 import ButtonOrigin from "../ButtonOrigin/ButtonOrigin";
+
+import { ReactComponent as Exit } from "../../images/svg/sign-out.svg";
 import { navigationVariants } from "../../constant/variantsPresents";
 
 const Nav = ({

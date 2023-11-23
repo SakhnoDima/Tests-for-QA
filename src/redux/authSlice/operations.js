@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../constant/constant";
 
 axios.defaults.baseURL = BASE_URL;
@@ -79,18 +79,18 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-export const googleRegister = createAsyncThunk(
-  "auth/userGoogleRegister",
-  async (_, thunkAPI) => {
-    try {
-      const { data } = await axios.get("/auth/register/google", {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.message);
-    }
-  }
-);
+// export const googleRegister = createAsyncThunk(
+//   "auth/userGoogleRegister",
+//   async (_, thunkAPI) => {
+//     try {
+//       const { data } = await axios.get("/auth/register/google");
+//       return data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.response.data.message);
+//     }
+//   }
+// );
+
+export const setToken = createAction("auth/setToken", (token) => ({
+  payload: { token },
+}));

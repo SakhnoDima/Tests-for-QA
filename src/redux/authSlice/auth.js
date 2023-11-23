@@ -4,8 +4,8 @@ import {
   register,
   logOut,
   refreshUser,
-  googleRegister,
   sendLetter,
+  setToken,
 } from "./operations";
 
 const initialState = {
@@ -53,13 +53,16 @@ const authSlice = createSlice({
         state.isLoggedIn = false;
         state.token = null;
       })
-      .addCase(googleRegister.fulfilled, (state, action) => {})
-      .addCase(googleRegister.rejected, (state, action) => {
-        state.error = action.payload;
-      })
+      // .addCase(googleRegister.fulfilled, (state, action) => {})
+      // .addCase(googleRegister.rejected, (state, action) => {
+      //   state.error = action.payload;
+      // })
       .addCase(sendLetter.fulfilled, (state, action) => {})
       .addCase(sendLetter.rejected, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(setToken, (state, { payload }) => {
+        state.token = payload.token;
       });
   },
 });
