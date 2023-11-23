@@ -1,6 +1,6 @@
 {
   "name": "tests-for-qa",
-  "homepage": "https://qa-test-sandy.vercel.app/",
+  "homepage": "http://qa-test-sandy.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
